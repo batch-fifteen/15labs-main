@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ Production ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.username }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 80
+        script: |
+          cd /var/www/15labs.tech
+          git pull origin Production
+          git status
+          npm install 
