@@ -20,4 +20,4 @@ jobs:
           cd /var/www/15labs.tech
           git pull origin Production
           git status
-          npm install 
+          npm install --prod
