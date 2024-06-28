@@ -26,24 +26,26 @@ jobs:
 
     - name: Copy files via SSH
       env:
-        SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SSH_HOST: ${{ secrets.HOST }}
         SSH_USER: ${{ secrets.USERNAME }}
         DEPLOY_DIR: /var/www/deployment/fifteenlabs-main
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/fifteen-labs
-        chmod 600 ~/.ssh/fifteen-labs
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
         rsync -avz --delete build/ $SSH_USER@$SSH_HOST:$DEPLOY_DIR/build
 
     - name: Restart Nginx
       env:
-        SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SSH_HOST: ${{ secrets.HOST }}
         SSH_USER: ${{ secrets.USERNAME }}
       run: |
-        ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
         sudo systemctl restart nginx
         EOF
-
