@@ -32,8 +32,8 @@ jobs:
         DEPLOY_DIR: /var/www/deployment/fifteenlabs-main
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/fifteen-labs
+        chmod 600 ~/.ssh/fifteen-labs
         ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
         rsync -avz --delete build/ $SSH_USER@$SSH_HOST:$DEPLOY_DIR/build
 
@@ -44,8 +44,8 @@ jobs:
         SSH_USER: ${{ secrets.USERNAME }}
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/fifteen-labs
+        chmod 600 ~/.ssh/fifteen-labs
         ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
         sudo systemctl restart nginx
         EOF
