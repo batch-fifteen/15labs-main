@@ -24,6 +24,13 @@ jobs:
     - name: Build the React app
       run: npm run build
 
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
     - name: Copy files via SSH
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -31,11 +38,7 @@ jobs:
         SSH_USER: ${{ secrets.USERNAME }}
         DEPLOY_DIR: /var/www/deployment/fifteenlabs-main
       run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
-        rsync -avz --delete build/ $SSH_USER@$SSH_HOST:$DEPLOY_DIR/build
+        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" build/ $SSH_USER@$SSH_HOST:$DEPLOY_DIR/build
 
     - name: Restart Nginx
       env:
@@ -43,9 +46,6 @@ jobs:
         SSH_HOST: ${{ secrets.HOST }}
         SSH_USER: ${{ secrets.USERNAME }}
       run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
         ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
         sudo systemctl restart nginx
         EOF
