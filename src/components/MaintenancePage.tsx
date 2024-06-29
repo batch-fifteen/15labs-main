@@ -9,7 +9,7 @@ const MaintenancePage = () => {
           <a href="mailto:information.15labs@gmail.com">contact us</a>,
           otherwise we’ll be back online shortly!
         </p>
-        <p>— The Team</p>
+        <p>— The 15labs Team</p>
       </div>
     </article>
   );
