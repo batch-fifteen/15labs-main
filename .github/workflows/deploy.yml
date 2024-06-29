@@ -1,43 +1,43 @@
-name: Deploy to vps (fix)
+name: Deploy
 
 on:
   push:
     branches:
-      - Production
+      - main
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18' 
+        node-version: '16'
+
     - name: Install dependencies
       run: npm install
-    - name: Build the React app
+
+    - name: Build project
       run: npm run build
-    - name: Setup SSH
+
+    - name: Setup SSH key
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-    - name: Copy files via SSH
+        ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SSH_HOST: ${{ secrets.HOST }}
-        SSH_USER: ${{ secrets.USERNAME }}
-        DEPLOY_DIR: /var/www/deployment/fifteenlabs-main
+        SSH_HOST: ${{ secrets.SSH_HOST }}
+
+    - name: Deploy to server using rsync
       run: |
-        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" build/ $SSH_USER@$SSH_HOST:$DEPLOY_DIR/build
-    - name: Restart Nginx
+        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_DIR }}/build
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SSH_HOST: ${{ secrets.HOST }}
-        SSH_USER: ${{ secrets.USERNAME }}
-      run: |
-        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
-        sudo systemctl restart nginx
-        EOF
+        SSH_USER: ${{ secrets.SSH_USER }}
+        SSH_HOST: ${{ secrets.SSH_HOST }}
+        DEPLOY_DIR: ${{ secrets.DEPLOY_DIR }}
