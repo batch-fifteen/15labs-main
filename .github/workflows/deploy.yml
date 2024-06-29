@@ -1,51 +1,20 @@
-name: Deploy to vps (fix)
-
+name: Deploy
 on:
   push:
-    branches:
-      - Production
-
+    branches: [ Production ]
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
       with:
-        node-version: '18' 
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build the React app
-      run: npm run build
-
-    - name: Setup SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-
-    - name: Copy files via SSH
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SSH_HOST: ${{ secrets.HOST }}
-        SSH_USER: ${{ secrets.USERNAME }}
-        DEPLOY_DIR: /var/www/deployment/fifteenlabs-main
-      run: |
-        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" build/ $SSH_USER@$SSH_HOST:$DEPLOY_DIR/build
-
-    - name: Restart Nginx
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SSH_HOST: ${{ secrets.HOST }}
-        SSH_USER: ${{ secrets.USERNAME }}
-      run: |
-        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
-        sudo systemctl restart nginx
-        EOF
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 80
+        script: |
+          cd /var/www/deployment/fifteenlabs-main
+          git pull origin Production
+          git status
+          npm install 
