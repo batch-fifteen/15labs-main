@@ -1,6 +1,9 @@
+import { DynamicTitle } from "./DynamicTitle";
+
 const MaintenancePage = () => {
   return (
     <article>
+      <DynamicTitle tit="We’ll be back soon!" />
       <h1>We’ll be back soon!</h1>
       <div className="mx-[300px]">
         <p className="text-center text-lg">
