@@ -4,10 +4,10 @@ const MaintenancePage = () => {
       <h1>We’ll be back soon!</h1>
       <div className="mx-[300px]">
         <p className="text-center text-lg">
-          Sorry for the inconvenience but we’re performing some maintenance at
-          the moment. If you need to you can always{" "}
-          <a href="mailto:information.15labs@gmail.com">contact us</a>,
-          otherwise we’ll be back online shortly!
+          Mohon maaf atas ketidaknyamanannya, saat ini kami sedang melakukan
+          pemeliharaan. Jika Anda membutuhkan bantuan, Anda selalu dapat{" "}
+          <a href="mailto:information.15labs@gmail.com">menghubungi kami</a>,
+          atau kami akan segera kembali online!
         </p>
         <p>— The 15labs Team</p>
       </div>
