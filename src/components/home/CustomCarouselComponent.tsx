@@ -10,6 +10,7 @@ export const CustomCarouselComponent: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -43,6 +44,7 @@ export const CustomCarouselComponent: React.FC = () => {
               </a>
               <a href="#" className="text-white">
                 <i className="fab fa-github"></i>
+                <i className="fa-brands fa-x-twitter"></i>
               </a>
             </div>
           </div>
@@ -52,7 +54,7 @@ export const CustomCarouselComponent: React.FC = () => {
         </div>
       </div>
       <div className="relative">
-        <div className="fixed border-2 border-0 m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
+        <div className="fixed border-0 m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
         <div className="flex flex-col h-screen items-center justify-center text-white p-[100px]">
           <div className="bg-[url('/src/assets/image/home-assets/slide2.png')] bg-cover bg-center bg-no-repeat h-[100%] rounded-lg z-10">
             <div className="flex flex-col items-center justify-center h-full">
@@ -69,10 +71,10 @@ export const CustomCarouselComponent: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="fixed border-2 border-0 ml-[960px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
+        <div className="fixed border-0 ml-[960px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
       </div>
       <div className="relative">
-        <div className="fixed border-2 border-0 ml-[960px] m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
+        <div className="fixed border-0 ml-[960px] m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
         <div className="flex flex-col h-screen items-center justify-center text-white p-[100px]">
           <div className="bg-[url('/src/assets/image/home-assets/slide3.png')] bg-cover bg-center bg-no-repeat h-[100%] rounded-lg z-10">
             <div className="flex flex-col items-center justify-center h-full">
@@ -93,10 +95,10 @@ export const CustomCarouselComponent: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="fixed border-2 border-0 ml-[90px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
+        <div className="fixed border-0 ml-[90px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
       </div>
       <div className="relative">
-        <div className="fixed border-2 border-0 m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
+        <div className="fixed border-0 m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
         <div className="flex flex-col h-screen items-center justify-center text-white p-[100px]">
           <div className="bg-[url('/src/assets/image/home-assets/slide4.png')] bg-cover bg-center bg-no-repeat h-[100%] rounded-lg z-10">
             <div className="flex flex-col items-center justify-center h-full">
@@ -113,10 +115,10 @@ export const CustomCarouselComponent: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="fixed border-2 border-0 ml-[960px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
+        <div className="fixed border-0 ml-[960px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
       </div>
       <div className="relative">
-        <div className="fixed border-2 border-0 ml-[960px] m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
+        <div className="fixed border-0 ml-[960px] m-[90px] bg-[#00cfff] w-[150px] h-[100px] z-10" />
         <div className="flex flex-col h-screen items-center justify-center text-white p-[100px]">
           <div className="bg-[url('/src/assets/image/home-assets/slide5.png')] bg-cover bg-center bg-no-repeat h-[100%] rounded-lg z-10">
             <div className="flex flex-col items-center justify-center h-full">
@@ -127,7 +129,7 @@ export const CustomCarouselComponent: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="fixed border-2 border-0 ml-[90px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
+        <div className="fixed border-0 ml-[90px] bottom-[90px] bg-[#00cfff] w-[150px] h-[100px] z-0" />
       </div>
     </Slider>
   );
