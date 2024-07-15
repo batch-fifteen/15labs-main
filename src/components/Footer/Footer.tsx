@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
           five centuries, but also the leap into electronic typesetting,
           remaining essentially unchanged
         </p>
-        <div className="flex space-x-4 pt-4">
+        <div className="flex space-x-6 pt-4">
           {socialMedia.map(({ icon, link }, index) => {
             return (
               <div key={index}>

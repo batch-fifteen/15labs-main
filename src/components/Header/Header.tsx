@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     { name: "Contact", link: "#contact" },
   ];
   return (
-    <header className="px-[111px] border-b-2 flex items-center justify-between p-4 bg-[#151D48] h-[85px]">
+    <header className="px-[93px] border-b-2 flex items-center justify-between p-4 bg-[#151D48] h-[85px] w-full fixed">
       <div className="flex-shrink-0">
         <img className="h-[55px]" src={DummyImg} alt="" />
       </div>
