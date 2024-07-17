@@ -7,6 +7,9 @@ export default {
         mx: "auto",
         center: true,
       },
+      fontFamily: {
+        serif: ['"Roboto Serif"', "serif"],
+      },
     },
   },
   plugins: [],
