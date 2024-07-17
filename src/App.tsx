@@ -1,15 +1,13 @@
 import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import MaintenancePage from "./components/MaintenancePage";
+import AboutUs from "./components/about-us/AboutUs";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div>
       <Header />
-      <MaintenancePage />
-      <MaintenancePage />
-      <MaintenancePage />
+      <AboutUs />
       <Footer />
     </div>
   );
