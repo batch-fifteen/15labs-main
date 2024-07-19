@@ -1,15 +1,17 @@
 import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import MaintenancePage from "./components/MaintenancePage";
+import AboutUs from "./components/about-us/AboutUs";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import HomeComponent from "./components/home/HomeComponent";
 
 function App() {
   return (
     <div>
       <Header />
-      <MaintenancePage />
-      <MaintenancePage />
-      <MaintenancePage />
+      <HomeComponent />
+      <AboutUs />
       <Footer />
     </div>
   );
