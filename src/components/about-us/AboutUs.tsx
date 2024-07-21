@@ -63,7 +63,7 @@ const AboutUs: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="flex flex-col gap-24">
-                <div className="flex flex-col mb-6 p-6 shadow-lg bg-[#FFFFFF] relative">
+                <div className="flex flex-col mb-6 p-7 shadow-lg bg-[#FFFFFF] rounded-lg relative w-[90%]">
                   <div className="decagon h-24 w-24 p-5 bg-blue-700 flex justify-center mb-2 absolute -top-10">
                     <img src={ReactSVG} alt="React" />
                   </div>
@@ -76,7 +76,7 @@ const AboutUs: React.FC = () => {
                     standard dummy text ever since the 1500s,
                   </p>
                 </div>
-                <div className="flex flex-col mb-6 p-6 shadow-lg g-[#FFFFFF] relative">
+                <div className="flex flex-col mb-6 p-7 shadow-lg bg-[#FFFFFF] rounded-lg relative w-[90%]">
                   <div className="decagon h-24 w-24 p-5 bg-blue-700 flex justify-center mb-2 absolute -top-10">
                     <img className="rotate-90" src={AndroidSVG} alt="Android" />
                   </div>
