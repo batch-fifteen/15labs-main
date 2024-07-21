@@ -4,7 +4,7 @@ import PortfolioCard, { PortfolioCardProps } from "./card";
 const Portfolio: React.FC = (): JSX.Element => {
   return (
     <section className="w-full bg-[#151D48] text-white p-4 flex flex-col justify-center items-center">
-      <header className="my-8 space-y-4 font-serif text-center w-96 lg:w-[30rem]">
+      <header className="w-96 lg:w-[30rem] my-8 space-y-4 font-serif text-center">
         <h1 className="text-3xl font-semibold">Our Works</h1>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
