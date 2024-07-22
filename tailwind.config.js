@@ -10,6 +10,9 @@ export default {
       fontFamily: {
         serif: ['"Roboto Serif"', "serif"],
       },
+      backgroundImage: {
+        "half-half": "linear-gradient(to right, #EEEEEE 50%, #33D4F7 50%)",
+      },
     },
   },
   plugins: [],
