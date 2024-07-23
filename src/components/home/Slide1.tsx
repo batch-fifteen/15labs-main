@@ -3,8 +3,8 @@ import Slide1Image from "../../assets/image/home-assets/slide1.png";
 
 const Slide1: React.FC = () => {
   return (
-    <div className="grid grid-cols-2 items-center text-white p-8 rounded-lg min-h-full">
-      <div className="ml-10">
+    <div className="grid grid-cols-2 items-center text-white p-10 rounded-lg min-h-full">
+      <div className="ml-16">
         <h1 className="font-bold text-[40px] leading-relaxed mb-4">
           <span className="bg-[#00cfff] text-4xl text-white px-2 py-1">
             Providing
@@ -30,7 +30,7 @@ const Slide1: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="max-w-1/2 ml-[20px]">
+      <div className="flex justify-center ml-[20px] md:ml-0 mt-4 md:mt-0">
         <img src={Slide1Image} alt="Team" className="w-[80%] rounded-lg" />
       </div>
     </div>
