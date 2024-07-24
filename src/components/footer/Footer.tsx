@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareFacebook,
@@ -11,6 +11,8 @@ import {
 import Logo15labs from "../../assets/logo.svg";
 
 const Footer: React.FC = () => {
+  const navigateFooterLogo: NavigateFunction = useNavigate();
+
   const navFooter: { title: string; sub: { name: string; link: string }[] }[] =
     [
       {
@@ -51,10 +53,15 @@ const Footer: React.FC = () => {
     { icon: faXTwitter, link: "#" },
   ];
   return (
-    <footer className="max-h-full bg-[#151D48] text-white py-[53px] flex">
+    <footer className="max-h-full bg-[#151D48] text-white py-[53px] flex px-12">
       <div className="container flex">
         <div className="flex-1 space-y-4">
-          <img className="h-[55px]" src={Logo15labs} alt="" />
+          <img
+            className="h-[55px] cursor-pointer"
+            src={Logo15labs}
+            alt="15Labs Logo"
+            onClick={() => navigateFooterLogo("/")}
+          />
           <p className="text-justify pt-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text

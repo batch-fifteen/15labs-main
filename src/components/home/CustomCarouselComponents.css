@@ -12,8 +12,19 @@
   bottom: 5px; /* Position of the dots */
 }
 
+.slick-prev,
 .slick-next {
-  right: 30px;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev {
+  left: -30px; /* Atur jarak tombol kiri */
+}
+
+.slick-next {
+  right: 5px; /* Atur jarak tombol kanan */
 }
 
 .slick-prev:before,
@@ -25,4 +36,10 @@
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.carousel-container {
+  width: 80%;
+  height: 400px;
+  margin: auto; /* Agar carousel berada di tengah */
 }
