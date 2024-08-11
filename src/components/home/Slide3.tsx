@@ -7,17 +7,17 @@ const Slide3: React.FC = () => {
       <div className="flex flex-col h-full items-center justify-center text-white p-12">
         <div className="bg-[url('/src/assets/image/home-assets/slide3.png')] bg-cover bg-center bg-no-repeat h-[250px] md:h-[475px] rounded-lg z-10">
           <div className="flex flex-col items-center justify-center h-full">
-            <h2 className="font-bold text-[55px] leading-relaxed mb-4 text-center w-[80%]">
+            <h2 className="font-bold md:text-[55px] leading-relaxed mb-4 text-center w-[80%]">
               Build long-term{" "}
-              <span className="bg-[#00cfff] text-[55px] text-white px-2 py-1">
+              <span className="bg-[#00cfff] md:text-[55px] text-white px-2 py-1">
                 relationships
               </span>{" "}
               with{" "}
-              <span className="bg-[#00cfff] text-[55px] text-white px-2 py-1">
+              <span className="bg-[#00cfff] md:text-[55px] text-white px-2 py-1">
                 clients based on trust
               </span>
               and
-              <span className="bg-[#00cfff] text-[55px] text-white px-2 py-1">
+              <span className="bg-[#00cfff] md:text-[55px] text-white px-2 py-1">
                 integrity
               </span>
             </h2>

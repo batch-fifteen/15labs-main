@@ -1,4 +1,3 @@
-// src/components/CustomCarouselComponent.tsx
 import React from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -22,8 +21,8 @@ export const CustomCarouselComponent: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-12">
-      <Slider className="mx-4" {...settings}>
+    <div className="container mx-auto px-4 md:px-12">
+      <Slider className="mx-auto" {...settings}>
         <Slide1 />
         <Slide2 />
         <Slide3 />

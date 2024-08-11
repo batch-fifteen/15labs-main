@@ -7,7 +7,7 @@ const Slide5: React.FC = () => {
       <div className="flex flex-col h-full items-center justify-center text-white p-12">
         <div className="bg-[url('/src/assets/image/home-assets/slide5.png')] bg-cover bg-center bg-no-repeat h-[250px] md:h-[475px] py-16 rounded-lg z-10">
           <div className="flex flex-col items-center justify-center h-full">
-            <h2 className="font-bold text-[55px] leading-relaxed mb-4 text-center w-[90%]">
+            <h2 className="font-bold md:text-[55px] leading-relaxed mb-4 text-center w-[90%]">
               Integrate the latest technologies to deliver competitive solutions
               in the market
             </h2>
