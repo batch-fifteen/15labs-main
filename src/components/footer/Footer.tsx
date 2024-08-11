@@ -52,60 +52,59 @@ const Footer: React.FC = () => {
     { icon: faSquareFacebook, link: "#" },
     { icon: faXTwitter, link: "#" },
   ];
+
   return (
-    <footer className="max-h-full bg-[#151D48] text-white py-[53px] flex px-12">
-      <div className="container flex">
-        <div className="flex-1 space-y-4">
+    <footer className="bg-[#151D48] text-white text-center py-8 px-4 md:px-12">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between">
+        <div className="flex-1 mb-8 md:mb-0">
           <img
             className="h-[55px] cursor-pointer"
             src={Logo15labs}
             alt="15Labs Logo"
             onClick={() => navigateFooterLogo("/")}
           />
-          <p className="text-justify pt-6">
+          <p className="text-sm md:text-base text-justify mt-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged
+            remaining essentially unchanged.
           </p>
-          <div className="flex space-x-6 pt-4">
-            {socialMedia.map(({ icon, link }, index) => {
-              return (
-                <div key={index}>
-                  <a href={link}>
-                    <FontAwesomeIcon icon={icon} size="lg" />
-                  </a>
-                </div>
-              );
-            })}
+          <div className="flex space-x-4 mt-4">
+            {socialMedia.map(({ icon, link }, index) => (
+              <a
+                key={index}
+                href={link}
+                className="text-white hover:text-gray-300"
+              >
+                <FontAwesomeIcon icon={icon} size="lg" />
+              </a>
+            ))}
           </div>
-          <p className="text-left pt-3">
-            &copy; 2024 15labs.tech - All Right Reserved
+          <p className="text-sm md:text-base mt-4">
+            &copy; 2024 15labs.tech - All Rights Reserved
           </p>
         </div>
-        <div className="flex-1 ">
-          <div className="flex justify-end">
-            {navFooter.map(({ title, sub }, index) => {
-              return (
-                <div key={index} className="space-y-2 pl-14 pr-8">
-                  <p className="text-start font-bold text-[18px]">{title}</p>
-                  <ul className="text-start space-y-1">
-                    {sub.map(({ name, link }, index) => {
-                      return (
-                        <li key={index}>
-                          <Link className="hover:underline" to={link}>
-                            {name}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
+
+        <div className="flex-1 flex flex-col md:flex-row md:justify-end">
+          {navFooter.map(({ title, sub }, index) => (
+            <div key={index} className="mb-8 md:mb-0 md:pl-8">
+              <p className="font-bold text-lg mb-2">{title}</p>
+              <ul className="space-y-2">
+                {sub.map(({ name, link }, index) => (
+                  <li key={index}>
+                    <Link
+                      className="hover:underline text-sm md:text-base"
+                      to={link}
+                    >
+                      {name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </footer>
