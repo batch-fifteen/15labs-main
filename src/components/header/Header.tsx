@@ -1,6 +1,7 @@
 import React, { RefObject } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import Logo15Labs from "../../assets/logo.svg";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 
 interface HeaderProps {
   homeRef: RefObject<HTMLDivElement>;
@@ -31,8 +32,22 @@ const Header: React.FC<HeaderProps> = ({
     { name: "Works", anchorTo: worksRef },
     { name: "Contact", anchorTo: contactRef },
   ];
+
+  function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
+  }
+
+  const scrollPosition = useScrollPosition();
+
   return (
-    <header className="bg-[#151D48] h-[85px] py-3 px-12 w-full sticky top-0 z-10">
+    <header
+      className={classNames(
+        "transition-all ease-in-out duration-700",
+        scrollPosition > 600
+          ? "bg-[#151D48] h-[85px] py-3 px-12 w-full sticky top-0 z-10"
+          : "bg-[#151D48] h-[70px] py-3 px-12 w-full top-0 z-10" // Change height slightly for better visibility
+      )}
+    >
       <div className="container justify-between h-full items-center flex">
         <img
           className="h-[30px] cursor-pointer"
