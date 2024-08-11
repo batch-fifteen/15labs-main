@@ -67,7 +67,7 @@ const ContactUs: React.FC = () => {
         <UnavailableAlert open={alert} onClose={closeAlert} />
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-screen p-4 md:p-12">
-        <div className="flex justify-center items-center">
+        <div className="hidden md:flex justify-center items-center">
           <img
             src={ContactUsSvg}
             alt="Contact Us"
@@ -78,22 +78,14 @@ const ContactUs: React.FC = () => {
           <h1 className="text-2xl md:text-4xl font-bold mb-6">Contact Us</h1>
           <p className="w-full md:w-96 leading-5">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.{" "}
+            industry.
           </p>
           <form
-            // action="#"
-            // method="POST"
             ref={form}
             onSubmit={sendEmail}
             className="w-full md:w-[36.438rem] mt-4"
           >
-            <div className="my:4 md:my-6">
-              {/* <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
-              </label> */}
+            <div className="mb-4 md:mb-6">
               <input
                 type="text"
                 id="name"
@@ -109,13 +101,7 @@ const ContactUs: React.FC = () => {
                 required
               />
             </div>
-            <div className="my:4 md:my-6">
-              {/* <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label> */}
+            <div className="mb-4 md:mb-6">
               <input
                 type="email"
                 id="email"
@@ -131,13 +117,7 @@ const ContactUs: React.FC = () => {
                 required
               />
             </div>
-            <div className="my-4">
-              {/* <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Message
-              </label> */}
+            <div className="mb-4">
               <textarea
                 id="message"
                 name="user_message"
