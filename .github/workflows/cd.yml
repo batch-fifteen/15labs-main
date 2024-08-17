@@ -11,11 +11,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Pull Docker image
-      run: docker pull 15labshub/cicd-pipeline:latest
+      - name: Pull Docker image
+        run: docker pull 15labshub/cicd-pipeline:latest
 
-    - name: Delete Old Docker Container
-      run: docker rm -f cicd-pipeline-container || true
+      - name: Delete Old Docker Container
+        run: docker rm -f cicd-pipeline-container || true
 
-    - name: Run Docker Container
-      run: docker run -d -p 8080:8080 --name cicd-pipeline-container 15labshub/cicd-pipeline
+      - name: Run Docker Container
+        run: docker run -d -p 8080:8080 --name cicd-pipeline-container 15labshub/cicd-pipeline
