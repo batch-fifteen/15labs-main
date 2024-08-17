@@ -27,7 +27,7 @@ jobs:
       - name: Debug EC2 Key
         run: |
           echo "$EC2_KEY" > ec2_key
-          cat ec2_key
+          echo "Key starts with: $(head -c 20 ec2_key)..."
           chmod 600 ec2_key
           ssh -i ec2_key -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST "echo 'SSH connection successful'"
 
@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "$EC2_KEY" > ec2_key
           chmod 600 ec2_key
-          rsync -avz -e "ssh -i ec2_key -o StrictHostKeyChecking=no" dist/ $EC2_USER@$EC2_HOST:/home/ubuntu/your-vite-project/dist/
+          rsync -avz -e "ssh -i ec2_key -o StrictHostKeyChecking=no" dist/ $EC2_USER@$EC2_HOST:/home/ubuntu/15labs-main/dist/
           ssh -i ec2_key -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST "sudo systemctl reload nginx"
         env:
           EC2_HOST: ${{ secrets.EC2_HOST }}
