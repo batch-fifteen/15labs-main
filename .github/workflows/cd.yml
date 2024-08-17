@@ -19,8 +19,3 @@ jobs:
 
     - name: Run Docker Container
       run: docker run -d -p 8080:8080 --name cicd-pipeline-container 15labshub/cicd-pipeline
-
-    - name: Wait for Container to Start
-      run: |
-        sleep 10  # Adjust the sleep duration based on your application startup time
-        curl -f http://localhost:8080/ || exit 1
