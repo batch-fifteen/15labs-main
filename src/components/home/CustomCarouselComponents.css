@@ -1,0 +1,39 @@
+.slick-dots li button:before {
+  color: white; /* Change the color of the dots */
+  font-size: 12px; /* Change the size of the dots */
+  margin: 0 5px; /* Adjust margin for responsiveness */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ffffff; /* Change the color of the active dot */
+}
+
+.slick-dots {
+  bottom: 10px; /* Position of the dots */
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev {
+  left: 10px; /* Adjust left positioning for responsiveness */
+}
+
+.slick-next {
+  right: 10px; /* Adjust right positioning for responsiveness */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 40px; /* Adjust font size for responsiveness */
+  line-height: 1;
+  opacity: 0.75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
