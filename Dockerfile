@@ -1,23 +1,14 @@
-# Gunakan image Node.js resmi sebagai base image
-FROM node:18
-
-# Set working directory di dalam container
+# Build stage
+FROM node:18 AS build-stage
 WORKDIR /app
-
-# Salin package.json dan package-lock.json ke dalam container
-COPY package*.json ./
-
-# Instal dependensi aplikasi
-RUN npm install
-
-# Salin semua file aplikasi ke dalam container
 COPY . .
-
-# Build aplikasi untuk produksi
+RUN npm install
 RUN npm run build
 
-# Ekspos port 8080 untuk aplikasi
-EXPOSE 8080
+# Production stage
+FROM nginx:stable-alpine
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Jalankan aplikasi
-CMD ["npm", "run", "preview"]
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
