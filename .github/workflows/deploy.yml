@@ -28,20 +28,22 @@ jobs:
         run: |
           echo "$EC2_KEY" > ec2_key
           echo "Key length: $(wc -c < ec2_key)"
-
+          
       - name: Fix and Debug EC2 Key
         run: |
           echo -e "$EC2_KEY" > ec2_key
           chmod 600 ec2_key
           echo "Key starts with: $(head -c 20 ec2_key)..."
-          ssh -i ec2_key -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST "echo 'SSH connection successful'"
+          echo "Key ends with: $(tail -c 20 ec2_key)..."
+          ssh -i ec2_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $EC2_USER@$EC2_HOST "echo 'SSH connection successful'"
 
       - name: Deploy to EC2
         run: |
           echo -e "$EC2_KEY" > ec2_key
           chmod 600 ec2_key
-          rsync -avz -e "ssh -i ec2_key -o StrictHostKeyChecking=no" dist/ $EC2_USER@$EC2_HOST:/home/ubuntu/15labs-main/dist/
-          ssh -i ec2_key -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST "sudo systemctl reload nginx"
+          echo "Deploying to EC2..."
+          rsync -avz -e "ssh -i ec2_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" dist/ $EC2_USER@$EC2_HOST:/home/ubuntu/15labs-main/dist/
+          ssh -i ec2_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $EC2_USER@$EC2_HOST "sudo systemctl reload nginx"
         env:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_USER: ${{ secrets.EC2_USER }}
