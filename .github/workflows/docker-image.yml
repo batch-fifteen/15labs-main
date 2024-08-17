@@ -21,4 +21,4 @@ jobs:
     - name: Build the Docker image
       run: docker build -t 15labshub/cicd-pipeline .
     - name: push to DockerHub
-      run: docker push 15labshub/cicd-pipeline:tagname
+      run: docker push 15labshub/cicd-pipeline:latest
