@@ -10,10 +10,12 @@ import ContactUs from "./components/contact-us/ContactUs";
 import { useRef } from "react";
 
 function App() {
+
   const homeRef = useRef<HTMLDivElement | null>(null);
   const aboutUsRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
+  
   return (
     <div>
       <Header
