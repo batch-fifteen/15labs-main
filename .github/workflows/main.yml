@@ -1,4 +1,4 @@
-name: 🚀 Deploy on push master
+name: 🚀 Deploy on push to Production
 
 on:
   push:
@@ -28,8 +28,9 @@ jobs:
           npm install
           npm run build
 
+      # Pastikan untuk memeriksa direktori output yang benar (dist/ atau build/)
       - name: List output files
-        run: find build/ -print
+        run: find dist/ -print # Ubah dari build/ ke dist/
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
@@ -37,4 +38,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/
+          local-dir: dist/ # Ubah dari build/ ke dist/
