@@ -1,34 +1,40 @@
-name: Deploy
+name: 🚀 Deploy on push master
 
 on:
   push:
-    branches: [Production]
+    branches:
+      - main
 
 jobs:
-  build:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Deploy using ssh
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            cd /var/www/deployment/15labs-main
-            git pull origin Production
-            git status
-            npm install 
-            npm run build
+    strategy:
+      matrix:
+        node-version: [16.x]
 
-      - name: Restart Nginx
-        uses: appleboy/ssh-action@master
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            sudo systemctl restart nginx
+          node-version: ${{ matrix.node-version }}
+
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+
+      - name: List output files
+        run: find build/ -print
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build/
