@@ -1,11 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const Slide5: React.FC = () => {
+  const divRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/src/assets/image/home-assets/slide5.png";
+    img.loading = "lazy";
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (divRef.current) {
+              divRef.current.style.backgroundImage = `url(${img.src})`;
+            }
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (divRef.current) {
+      observer.observe(divRef.current);
+    }
+
+    return () => {
+      if (divRef.current) {
+        observer.unobserve(divRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="relative">
       {/* <div className="fixed border-0 ml-[1209px] mb-9 m-[30px] bg-[#00cfff] w-[150px] h-[100px] z-10" /> */}
       <div className="flex flex-col h-full items-center justify-center text-white p-12">
-        <div className="bg-[url('/src/assets/image/home-assets/slide5.png')] bg-cover bg-center bg-no-repeat h-[250px] md:h-[475px] py-16 rounded-lg z-10">
+        <div
+          ref={divRef}
+          className="bg-cover bg-center bg-no-repeat h-[250px] md:h-[475px] py-16 rounded-lg z-10"
+          style={{ backgroundImage: "none" }} // Initial background image is none
+        >
           <div className="flex flex-col items-center justify-center h-full">
             <h2 className="font-bold md:text-[55px] leading-relaxed mb-4 text-center w-[90%]">
               Integrate the latest technologies to deliver competitive solutions
