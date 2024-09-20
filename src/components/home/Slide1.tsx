@@ -40,6 +40,7 @@ const Slide1: React.FC = () => {
           src={Slide1Image}
           alt="Team"
           className="w-full md:w-[80%] rounded-lg"
+          loading="lazy"
         />
       </div>
     </div>
