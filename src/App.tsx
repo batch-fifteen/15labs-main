@@ -8,14 +8,15 @@ import HomeComponent from "./components/home/HomeComponent";
 import Portfolio from "./components/portfolio";
 import ContactUs from "./components/contact-us/ContactUs";
 import { useRef } from "react";
+import OurTechnology from "./components/our-tech/OurTechnology";
+import OurTeams from "./components/our-teams/OurTeams";
 
 function App() {
-
   const homeRef = useRef<HTMLDivElement | null>(null);
   const aboutUsRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
-  
+
   return (
     <div>
       <Header
@@ -27,6 +28,8 @@ function App() {
       <HomeComponent />
       <div ref={aboutUsRef}>
         <AboutUs />
+        <OurTechnology />
+        <OurTeams />
       </div>
       <div ref={worksRef}>
         <Portfolio />
@@ -34,7 +37,6 @@ function App() {
       <div ref={contactRef}>
         <ContactUs />
       </div>
-
       <Footer />
     </div>
   );

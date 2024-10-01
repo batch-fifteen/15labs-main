@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "nickname": "Joko",
+    "fullName": "Joko Purnomo",
+    "photo": "teams-photo/joko.jpg",
+    "role": "Developer",
+    "alt": "joko-photo"
+  },
+  {
+    "id": 2,
+    "nickname": "Afan",
+    "fullName": "afan",
+    "photo": "teams-photo/afan.jpeg",
+    "role": "Developer",
+    "alt": "afan-photo"
+  },
+  {
+    "id": 3,
+    "nickname": "Gagas",
+    "fullName": "Gagas Wahyu Ilham Noto",
+    "photo": "teams-photo/gagas.jpg",
+    "role": "Developer",
+    "alt": "gagas-photo"
+  },
+  {
+    "id": 4,
+    "nickname": "Jopi",
+    "fullName": "Jopi Adrianto Doloksaribu",
+    "photo": "teams-photo/jopi.jpg",
+    "role": "Developer",
+    "alt": "jopi-photo"
+  },
+  {
+    "id": 5,
+    "nickname": "Aji",
+    "fullName": "Muhammad Aji Perdana",
+    "photo": "teams-photo/aji.jpg",
+    "role": "Developer",
+    "alt": "aji-photo"
+  },
+  {
+    "id": 6,
+    "nickname": "Andri",
+    "fullName": "Andri Febriyadi Putra",
+    "photo": "teams-photo/andri.jpg",
+    "role": "Developer",
+    "alt": "andri-photo"
+  },
+  {
+    "id": 7,
+    "nickname": "Rahman",
+    "fullName": "Muhammad Rahman",
+    "photo": "teams-photo/rahman.png",
+    "role": "Developer",
+    "alt": "rahman-photo"
+  },
+  {
+    "id": 8,
+    "nickname": "Rizky",
+    "fullName": "Rizky Pratama",
+    "photo": "teams-photo/rizky.webp",
+    "role": "Developer",
+    "alt": "rizky-photo"
+  },
+  {
+    "id": 9,
+    "nickname": "Faheem",
+    "fullName": "Muhammad Faheem Sultan Al Aziz",
+    "photo": "teams-photo/faheem.jpg",
+    "role": "Developer",
+    "alt": "faheem-photo"
+  },
+  {
+    "id": 10,
+    "nickname": "Ary",
+    "fullName": "Putu Ary Kusuma Yudha",
+    "photo": "teams-photo/putu-ary.jpg",
+    "role": "Developer",
+    "alt": "putu-ary-photo"
+  },
+  {
+    "id": 11,
+    "nickname": "Shahdat",
+    "fullName": "Shahdat Maulani",
+    "photo": "teams-photo/shahdat.jpeg",
+    "role": "Developer",
+    "alt": "shahdat-photo"
+  },
+  {
+    "id": 12,
+    "nickname": "Iqbal",
+    "fullName": "Muhammad Iqbal Rivaldi",
+    "photo": "teams-photo/iqbal.jpeg",
+    "role": "Developer",
+    "alt": "iqbal-photo"
+  }
+]
