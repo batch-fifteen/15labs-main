@@ -7,6 +7,7 @@ import {
   faCircleChevronLeft,
   faCircleChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import HeadingBlue from "../Heading/HeadingBlue";
 
 function CustomPrevArrow({ onClick }: CustomArrowProps): React.ReactElement {
   return (
@@ -70,9 +71,7 @@ export default function OurTeams(): React.ReactElement {
   };
   return (
     <div className="container w-full flex flex-col items-center pt-4 pl-4 pr-4 pb-24">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-12 text-center">
-        Our <span className="text-[#47D4E9]">Teams</span>
-      </h1>
+      <HeadingBlue firstWord="Our" secondWord="Teams" />
       <div className="w-full">
         <Slider {...settings} className="z-0">
           {listTeams.map(({ id, nickname, photo, role, alt }) => (

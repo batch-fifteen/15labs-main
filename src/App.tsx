@@ -10,6 +10,7 @@ import ContactUs from "./components/contact-us/ContactUs";
 import { useRef } from "react";
 import OurTechnology from "./components/our-tech/OurTechnology";
 import OurTeams from "./components/our-teams/OurTeams";
+import WhatWeDo from "./components/what-we-do";
 
 function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
@@ -28,6 +29,7 @@ function App() {
       <HomeComponent />
       <div ref={aboutUsRef}>
         <AboutUs />
+        <WhatWeDo />
         <OurTechnology />
         <OurTeams />
       </div>

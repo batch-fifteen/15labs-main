@@ -13,6 +13,7 @@ import RedisImg from "../../assets/image/our-tech/redis.png";
 import ZAPImg from "../../assets/image/our-tech/zap.png";
 import AWSImg from "../../assets/image/our-tech/aws.png";
 import KatalonImg from "../../assets/image/our-tech/katalon.png";
+import HeadingBlue from "../Heading/HeadingBlue";
 
 export default function OurTechnology() {
   const imgTech: { img: string; alt: string }[] = [
@@ -78,10 +79,8 @@ export default function OurTechnology() {
     },
   ];
   return (
-    <div className="container w-full flex flex-col items-center pt-4 pl-4 pr-4 pb-24">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-12 text-center">
-        Our <span className="text-[#47D4E9]">Technologies</span>
-      </h1>
+    <div className="container w-full flex flex-col items-center pt-4 pl-4 pr-4 pb-24 mt-16">
+      <HeadingBlue firstWord="Our" secondWord="Technology" />
       <div className="flex flex-wrap justify-center gap-4">
         {imgTech.map(({ img, alt }, index) => (
           <div key={index} className="flex justify-center pb-6 basis-32">
