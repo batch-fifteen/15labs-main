@@ -11,6 +11,7 @@ import { useRef } from "react";
 import OurTechnology from "./components/our-tech/OurTechnology";
 import OurTeams from "./components/our-teams/OurTeams";
 import WhatWeDo from "./components/what-we-do";
+import OurServices from "./components/our-service";
 
 function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
@@ -30,6 +31,7 @@ function App() {
       <div ref={aboutUsRef}>
         <AboutUs />
         <WhatWeDo />
+        <OurServices />
         <OurTechnology />
         <OurTeams />
       </div>
