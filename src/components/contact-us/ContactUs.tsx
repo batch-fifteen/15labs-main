@@ -5,11 +5,6 @@ import SuccessAlert from "./SuccessAlert";
 import TooManyRequestAlert from "./TooManyRequestAlert";
 import UnavailableAlert from "./UnavailableAlert";
 
-// NOTE:
-// Email send status codes: 200
-// Too many requests status codes: 429
-// Unavailable For Legal Reasons (block headless) status codes: 451
-
 const ContactUs: React.FC = () => {
   const [statusCode, setStatusCode] = useState<number | undefined>(undefined);
   const [alert, setAlert] = useState<boolean>(true);
@@ -24,7 +19,7 @@ const ContactUs: React.FC = () => {
         publicKey: "1UTd0FttavSRWqE6B",
         blockHeadless: true,
         limitRate: {
-          throttle: 120_000, // 120,000 milidetik = 2 menit (1 request per 2 menit)
+          throttle: 120_000,
         },
       })
       .then(
@@ -76,10 +71,6 @@ const ContactUs: React.FC = () => {
         </div>
         <div className="w-full p-4 flex flex-col justify-center">
           <h1 className="text-2xl md:text-4xl font-bold mb-6">Contact Us</h1>
-          <p className="w-full md:w-96 leading-5">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </p>
           <form
             ref={form}
             onSubmit={sendEmail}
