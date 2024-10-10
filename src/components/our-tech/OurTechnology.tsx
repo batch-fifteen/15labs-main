@@ -84,7 +84,11 @@ export default function OurTechnology() {
       <div className="flex flex-wrap justify-center gap-4">
         {imgTech.map(({ img, alt }, index) => (
           <div key={index} className="flex justify-center pb-6 basis-32">
-            <img src={img} alt={alt} className="h-24 w-auto" />
+            <img
+              src={img}
+              alt={alt}
+              className="h-24 object-fill object-center"
+            />
           </div>
         ))}
       </div>

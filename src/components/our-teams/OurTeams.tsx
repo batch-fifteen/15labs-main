@@ -17,7 +17,7 @@ function CustomPrevArrow({ onClick }: CustomArrowProps): React.ReactElement {
                 absolute top-1/3 transform -translate-y-1/2 left-0"
       onClick={onClick}
     >
-      <FontAwesomeIcon icon={faCircleChevronLeft} beat size="3x" />
+      <FontAwesomeIcon icon={faCircleChevronLeft} size="3x" />
     </div>
   );
 }
@@ -30,7 +30,7 @@ function CustomNextArrow({ onClick }: CustomArrowProps): React.ReactElement {
                 absolute top-1/3 transform -translate-y-1/2 right-0"
       onClick={onClick}
     >
-      <FontAwesomeIcon icon={faCircleChevronRight} beat size="3x" />
+      <FontAwesomeIcon icon={faCircleChevronRight} size="3x" />
     </div>
   );
 }
@@ -45,6 +45,7 @@ export default function OurTeams(): React.ReactElement {
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: true,
+    centerPadding: "-10px",
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
     responsive: [
@@ -58,7 +59,8 @@ export default function OurTeams(): React.ReactElement {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
+          centerPadding: "97px",
         },
       },
       {

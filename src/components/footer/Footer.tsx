@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#151D48] text-white text-center py-8 px-4 md:px-12">
       <div className="container mx-auto flex flex-col md:flex-row justify-between">
-        <div className="flex-1 mb-8 md:mb-0">
+        <div className="mb-8 md:mb-0 w-full">
           <img
             className="h-[55px] cursor-pointer"
             src={Logo15labs}
@@ -82,14 +82,14 @@ const Footer: React.FC = () => {
               </a>
             ))}
           </div>
-          <p className="text-sm md:text-base mt-4">
+          <p className="text-sm text-left mt-4">
             &copy; 2024 15labs.tech - All Rights Reserved
           </p>
         </div>
 
-        <div className="flex-1 flex flex-col md:flex-row md:justify-end">
+        <div className="flex justify-around text-left w-full">
           {navFooter.map(({ title, sub }, index) => (
-            <div key={index} className="mb-8 md:mb-0 md:pl-8">
+            <div key={index} className="mb-5">
               <p className="font-bold text-lg mb-2">{title}</p>
               <ul className="space-y-2">
                 {sub.map(({ name, link }, index) => (

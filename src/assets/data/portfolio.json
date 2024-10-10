@@ -44,7 +44,7 @@
   {
     "id": 7,
     "title": "Sainte Lague App",
-    "description": "Dirancang untuk mempermudah proses perhitungan alokasi kursi DPR (Dewan Perwakilan Rakyat) menggunakan metode Sainte-Laguë yang digunakan dalam sistem pemilihan umum untuk menentukan distribusi kursi di parlemen berdasarkan jumlah suara yang diperoleh oleh setiap partai atau koalisi.",
+    "description": "Dirancang untuk mempermudah proses perhitungan alokasi kursi DPR (Dewan Perwakilan Rakyat) menggunakan metode Sainte-Laguë yang digunakan dalam sistem pemilihan umum untuk menentukan distribusi kursi di parlemen.",
     "technology": "React, Bootstrap, Express, PostgreSQL",
     "image": "project/rahman-1.png"
   },
