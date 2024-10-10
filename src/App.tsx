@@ -1,5 +1,4 @@
 import "./App.css";
-import AboutUs from "./components/about-us/AboutUs";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import "slick-carousel/slick/slick.css";
@@ -12,6 +11,7 @@ import OurTechnology from "./components/our-tech/OurTechnology";
 import OurTeams from "./components/our-teams/OurTeams";
 import WhatWeDo from "./components/what-we-do";
 import OurServices from "./components/our-service";
+import WhoWheAre from "./components/who-whe-are";
 
 function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
@@ -29,7 +29,7 @@ function App() {
       />
       <HomeComponent />
       <div ref={aboutUsRef}>
-        <AboutUs />
+        <WhoWheAre />
         <WhatWeDo />
         <OurServices />
         <OurTechnology />

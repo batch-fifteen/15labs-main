@@ -43,7 +43,7 @@ const OurServices: React.FC = () => {
   return (
     <div className="bg-[#335EF7] my-9 w-full h-full">
       <div className="container mx-auto p-4 py-10 text-white">
-        <h1 className="text-center text-3xl md:text-4xl font-semibold mb-6">
+        <h1 className="text-center text-3xl md:text-4xl font-semibold mb-6 font-serif">
           Our Service
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-y-16 py-6">

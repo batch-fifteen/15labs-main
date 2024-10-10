@@ -17,8 +17,10 @@ const Slide1: React.FC = () => {
           <br className="md:hidden" /> All
         </h1>
         <p className="text-base md:text-lg leading-relaxed mb-6 w-full md:w-3/4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text
+          We believe in delivering innovative and reliable solutions that
+          empower businesses and individuals alike. Our goal is to simplify
+          complexities, providing tailored strategies that drive growth and
+          success in a rapidly evolving world.
         </p>
         <div className="space-x-4 text-lg md:text-2xl flex justify-center md:justify-start">
           <a href="#" className="text-white hover:text-gray-300">

@@ -94,7 +94,6 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div
           id="mobile-menu"
           className={`md:hidden transform transition-transform duration-500 ease-in-out fixed top-16 left-0 h-screen w-full bg-[#151D48] z-30 ${
