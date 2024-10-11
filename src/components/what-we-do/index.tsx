@@ -7,9 +7,9 @@ const WhatWeDo = () => {
     <div className="container mx-auto mt-9">
       <HeadingBlue firstWord="What" secondWord="We Do" />
       <div className="flex flex-col items-center lg:items-start lg:flex-row gap-4">
-        <div className="w-full lg:h-[772px] flex flex-col justify-between gap-y-4">
+        <div className="w-full lg:h-[772px] flex flex-col justify-around gap-y-4">
           <div className="w-[98%] p-8 border rounded">
-            <p className="text-justify font-serif text-sm lg:text-lg">
+            <p className="text-justify font-serif">
               At 15 Labs, we specialize in delivering tailored technology
               products and technical solutions to meet the unique needs of our
               clients. Our core focus is on software development, particularly
@@ -18,7 +18,7 @@ const WhatWeDo = () => {
             </p>
           </div>
           <div className="w-[98%] p-8 border rounded">
-            <p className="text-justify font-serif text-sm lg:text-lg">
+            <p className="text-justify font-serif">
               Our services extend beyond just development. We offer quality
               assurance to ensure your software performs optimally, penetration
               testing to safeguard your systems, and cloud computing solutions
@@ -28,7 +28,7 @@ const WhatWeDo = () => {
             </p>
           </div>
           <div className="w-[98%] p-8 border rounded">
-            <p className="text-justify font-serif text-sm lg:text-lg">
+            <p className="text-justify font-serif">
               We host seminars and courses aimed at students to empower them
               with skills and knowledge needed in today’s tech-driven world.
               Through our education initiatives, we are connecting aspiring tech

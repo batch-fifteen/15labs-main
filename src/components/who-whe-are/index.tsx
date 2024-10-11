@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoWheAre: React.FC = (): JSX.Element => {
   return (
-    <div className="relative p-5 lg:p-16">
+    <div className="relative p-5 lg:p-16 container mx-auto">
       <div className="absolute top-5 left-0 p-28 bg-gray-100/80 -z-30"></div>
       <div className="absolute bottom-0 right-0 p-28 bg-gray-100/80 -z-30"></div>
       <h1 className="text-3xl md:text-4xl font-semibold mb-10 font-serif">

@@ -39,16 +39,18 @@ const Portfolio: React.FC = (): JSX.Element => {
   };
 
   return (
-    <section className="w-full bg-[#151D48] text-white p-4 flex flex-col justify-center items-center pb-20">
-      <header className="w-96 lg:w-[30rem] my-8 space-y-4 font-serif text-center">
-        <h1 className="text-3xl font-semibold">Our Works</h1>
-      </header>
-      <div className="w-full">
-        <Slider {...settings}>
-          {portfolio.map((data: PortfolioCardProps, index: number) => (
-            <PortfolioCard key={index} {...data} />
-          ))}
-        </Slider>
+    <section className="w-full bg-[#151D48] text-white">
+      <div className="flex flex-col justify-center items-center pb-20 container mx-auto">
+        <header className="w-96 lg:w-[30rem] my-8 space-y-4 font-serif text-center">
+          <h1 className="text-3xl font-semibold">Our Works</h1>
+        </header>
+        <div className="w-full">
+          <Slider {...settings}>
+            {portfolio.map((data: PortfolioCardProps, index: number) => (
+              <PortfolioCard key={index} {...data} />
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );
