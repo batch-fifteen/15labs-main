@@ -1,26 +1,65 @@
 [
   {
     "id": 1,
-    "title": "Lorem Ipsum",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    "image": "/public/portfolio.svg"
+    "title": "Monitoring Parkir",
+    "description": "Monitoring Parkir dengan integrasi Machine learning menggunakan model Vision Transformer",
+    "technology": "React, RabbitMq, Python, PyTorch, MongoDB, Hapi Js, Tailwind",
+    "image": "project/aji-2.png"
   },
   {
     "id": 2,
-    "title": "Lorem Ipsum",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    "image": "/public/portfolio.svg"
+    "title": "Drilling Monitoring",
+    "description": "Website Monitoring Tambang",
+    "technology": "React, Nest Js, Tailwind, Material UI",
+    "image": "project/aji-1.png"
   },
   {
     "id": 3,
-    "title": "Lorem Ipsum",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    "image": "/public/portfolio.svg"
+    "title": "Solution Architect for Portal News",
+    "description": "Infrastruktur yang dibutuhkan untuk membuat portal berita",
+    "technology": "AWS",
+    "image": "project/joko-1.jpeg"
   },
   {
     "id": 4,
-    "title": "Lorem Ipsum",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    "image": "/public/portfolio.svg"
+    "title": "IDX Stock Screener",
+    "description": "Involved in data analysis process for stocks in certain sectors and in certain industry to compare certain metrics of the said stocks to help future investors decide stocks to buy",
+    "technology": "Angular, Flask, Redis, Selenium, Yfinance",
+    "image": "project/jopi-1.png"
+  },
+  {
+    "id": 5,
+    "title": "Sistem Informasi Kelengkapan Dokumen Perkuliahan",
+    "description": "Sistem monitoring kelengkapan dokumen perkuliahan prodi berbasis web dengan menerapkan konsep gamifikasi ini dibangun menggunakan framework laravel.",
+    "technology": "PHP, Laravel, Bootstrap",
+    "image": "project/ary-1.PNG"
+  },
+  {
+    "id": 6,
+    "title": "Aplikasi Pengelolaan Iuran Pembayaran Lingkungan",
+    "description": "Aplikasi perumahan untuk memudahkan warga membayar iuran lingkungan",
+    "technology": "MERN STACK + React Native Expo",
+    "image": "project/afan-1.png"
+  },
+  {
+    "id": 7,
+    "title": "Sainte Lague App",
+    "description": "Dirancang untuk mempermudah proses perhitungan alokasi kursi DPR (Dewan Perwakilan Rakyat) menggunakan metode Sainte-Laguë yang digunakan dalam sistem pemilihan umum untuk menentukan distribusi kursi di parlemen.",
+    "technology": "React, Bootstrap, Express, PostgreSQL",
+    "image": "project/rahman-1.png"
+  },
+  {
+    "id": 8,
+    "title": "Aplikasi Data Mahasiswa",
+    "description": "Aplikasi ini saya buat untuk memenuhi ujian sertifikasi Junior Mobile Programer BNSP, aplikasi ini dapat mengelola data mahasiswa secara serderhana dengan berbagai operasi seperti CRUD data mahasiswa",
+    "technology": "Java dan Sqlite",
+    "image": "project/iqbal-1.png"
+  },
+  {
+    "id": 9,
+    "title": "Signature App",
+    "description": "Aplikasi ini saya buat ketika terinspirasi dari seorang teman yang kesusahan untuk membuat tanda tangan untuk di bagikan ke aplikasi wa.",
+    "technology": "Kotlin",
+    "image": "project/iqbal-2.png"
   }
 ]
