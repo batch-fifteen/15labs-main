@@ -64,12 +64,10 @@ const Footer: React.FC = () => {
             onClick={() => navigateFooterLogo("/")}
           />
           <p className="text-sm md:text-base text-justify mt-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            We believe in delivering innovative and reliable solutions that
+            empower businesses and individuals alike. Our goal is to simplify
+            complexities, providing tailored strategies that drive growth and
+            success in a rapidly evolving world.
           </p>
           <div className="flex space-x-4 mt-4">
             {socialMedia.map(({ icon, link }, index) => (

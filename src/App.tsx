@@ -6,20 +6,32 @@ import "slick-carousel/slick/slick-theme.css";
 import HomeComponent from "./components/home/HomeComponent";
 import Portfolio from "./components/portfolio";
 import ContactUs from "./components/contact-us/ContactUs";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import OurTechnology from "./components/our-tech/OurTechnology";
 import OurTeams from "./components/our-teams/OurTeams";
 import WhatWeDo from "./components/what-we-do";
 import OurServices from "./components/our-service";
 import WhoWheAre from "./components/who-whe-are";
+import LoadingScreen from "./components/loading-screen";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const homeRef = useRef<HTMLDivElement | null>(null);
   const aboutUsRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
-  return (
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return isLoading ? (
+    <LoadingScreen />
+  ) : (
     <div>
       <Header
         homeRef={homeRef}
