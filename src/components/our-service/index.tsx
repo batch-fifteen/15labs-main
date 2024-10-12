@@ -46,7 +46,7 @@ const OurServices: React.FC = () => {
         <h1 className="text-center text-3xl md:text-4xl font-semibold mb-6 font-serif">
           Our Service
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-y-16 py-6">
+        <div className="flex flex-wrap justify-center mt-10">
           {DataOurServices.map((data: IServices, index: number) => (
             <CardOurServices key={index} {...data} />
           ))}
@@ -58,14 +58,18 @@ const OurServices: React.FC = () => {
 
 const CardOurServices: React.FC<IServices> = ({ title, description }) => {
   return (
-    <div className="bg-white text-black p-5 w-96 h-56 font-serif relative">
-      <img
-        src={CardLogo}
-        alt="Logo"
-        className="absolute -top-10 -left-10 h-28 w-28"
-      />
-      <h1 className="font-bold text-xl ml-12">{title}</h1>
-      <p className="text-sm text-justify mt-3">{description}</p>
+    <div className="p-4 max-w-sm">
+      <div className="bg-white text-black font-serif relative flex rounded-lg h-full p-6 flex-col">
+        <img
+          src={CardLogo}
+          alt="Logo"
+          className="absolute -top-10 -left-10 h-28 w-28"
+        />
+        <h1 className="font-bold text-xl ml-12">{title}</h1>
+        <p className="leading-relaxed text-base text-black dark:text-gray-300">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };
