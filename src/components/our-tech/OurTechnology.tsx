@@ -14,6 +14,7 @@ import ZAPImg from "../../assets/image/our-tech/zap.png";
 import AWSImg from "../../assets/image/our-tech/aws.png";
 import KatalonImg from "../../assets/image/our-tech/katalon.png";
 import HeadingBlue from "../Heading/HeadingBlue";
+import springBootImg from "../../assets/image/our-tech/springbootImage.png";
 
 export default function OurTechnology() {
   const imgTech: { img: string; alt: string }[] = [
@@ -32,6 +33,10 @@ export default function OurTechnology() {
     {
       img: AngularImg,
       alt: "Angular",
+    },
+    {
+      img: springBootImg,
+      alt: "Spring",
     },
     {
       img: NextImg,
