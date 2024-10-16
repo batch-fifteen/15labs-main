@@ -13,6 +13,7 @@ import WhatWeDo from "./components/what-we-do";
 import OurServices from "./components/our-service";
 import WhoWheAre from "./components/who-whe-are";
 import LoadingScreen from "./components/loading-screen";
+import FloatingButton from "./components/floating-button/floating-button";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +47,9 @@ function App() {
         <OurServices />
         <OurTechnology />
         <OurTeams />
+      </div>
+      <div onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        <FloatingButton homeRef={homeRef} />
       </div>
       <div ref={worksRef}>
         <Portfolio />
